@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 
 const oauth = require('./routes/oauth');
+const transfer = require('./routes/transfer');
 
 const settings = require('./lib/settings');
 const request = require('request');
@@ -21,5 +22,6 @@ app.get('/', function(req, res){
  * GET          /oauth/redirect
  */
 app.use('/oauth', oauth);
+app.use('/transfer', transfer);
 
 module.exports = app;
