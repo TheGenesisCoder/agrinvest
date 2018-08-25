@@ -1,11 +1,19 @@
 const express = require('express');
 const app = express();
 
-const settings = require('./lib/settings');
+const bodyParser = require('body-parser');
+
 const oauth = require('./routes/oauth');
 
+const settings = require('./lib/settings');
+const request = require('request');
+
 app.get('/', function(req, res){
-    res.send('Hello world');
+    //setup a redirect link
+    let redirect_link = `${settings.ubp.url}/authorize?client_id=${settings.ubp.client_id}&scope=${settings.ubp.scope}&response_type=code&redirect_uri=${settings.ubp.redirect_uri}`;
+    
+    //render the direct link into the page
+    res.send(`<a href="${redirect_link}">Login</a>`);
 });
 /**
  * Available Paths are
