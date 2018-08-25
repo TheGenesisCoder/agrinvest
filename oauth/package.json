@@ -1,0 +1,14 @@
+{
+  "name": "oauth",
+  "version": "1.0.0",
+  "description": "UnionBank Identity",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "keywords": [
+    "OAUTH"
+  ],
+  "author": "",
+  "license": "ISC"
+}
